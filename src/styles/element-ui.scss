@@ -1,0 +1,335 @@
+// cover some element-ui styles
+
+.el-breadcrumb__inner,
+.el-breadcrumb__inner a {
+  font-weight: 400 !important;
+}
+
+.el-upload {
+  input[type="file"] {
+    display: none !important;
+  }
+}
+
+.el-upload__input {
+  display: none;
+}
+
+.cell {
+  .el-tag {
+    margin-right: 0px;
+  }
+}
+
+.el-table th>.cell {
+  text-align: center !important;
+  font-weight: bold;
+}
+
+.el-table .cell {
+  text-align: center;
+}
+
+.small-padding {
+  .cell {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+.fixed-width {
+  .el-button--mini {
+    padding: 7px 10px;
+    width: 60px;
+  }
+}
+
+.status-col {
+  .cell {
+    padding: 0 10px;
+    text-align: center;
+
+    .el-tag {
+      margin-right: 0px;
+    }
+  }
+}
+
+// to fixed https://github.com/ElemeFE/element/issues/2461
+.el-dialog {
+  transform: none;
+  left: 0;
+  position: relative;
+  margin: 0 auto;
+}
+
+// refine element ui upload
+.upload-container {
+  .el-upload {
+    width: 100%;
+
+    .el-upload-dragger {
+      width: 100%;
+      height: 200px;
+    }
+  }
+}
+
+// dropdown
+.el-dropdown-menu {
+  a {
+    display: block
+  }
+}
+
+// fix date-picker ui bug in filter-item
+.el-range-editor.el-input__inner {
+  display: inline-flex !important;
+}
+
+.el-menu--collapse {
+  .is-active {
+    background-color: #b4d8f9 !important;
+  }
+}
+
+
+// #app .sidebar-container .svg-icon {
+//   color: #20a0ff;
+// }
+
+
+.el-table th.gutter {
+  display: table-cell !important;
+}
+
+.el-table colgroup.gutter {
+  display: table-cell !important;
+}
+
+//隐藏number的input中的上下箭头
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+//首页搜井
+.index-filter-form {
+  .el-form-item--mini.el-form-item {
+    margin-bottom: 0;
+  }
+}
+
+
+//修改不可编辑表单显示
+.el-input.is-disabled {
+  .el-input__inner {
+    background-color: #FAFAFA;
+    color: #404246;
+  }
+}
+.el-textarea.is-disabled {
+  .el-textarea__inner {
+    background-color: #FAFAFA;
+    color: #404246;
+  }
+}
+.el-input-number.is-disabled {
+  .el-input-number__increase {
+    background: #FAFAFA
+  }
+  .el-input-number__decrease {
+    background: #FAFAFA
+  }
+}
+
+//首页搜井井状态过滤
+.index-wellfilter-wellstatus.el-dropdown {
+  display: block;
+}
+
+//预测方法参数切换表单的Input样式
+.predict-form-input {
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  .el-input__icon {
+    display: none;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  .el-form-item {
+    margin-top: -2px;
+    margin-bottom: 12px !important;
+  }
+
+  .el-form-item__label {
+    font-size: 14px;
+    color: #909090;
+    margin-left: 7px;
+  }
+
+  label {
+    text-align: left;
+    font-weight: normal;
+  }
+
+  input {
+    min-width: 80px;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 13px;
+    font-weight: 10;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    line-height: 22px;
+    padding-left: 5px;
+    float: left;
+    margin-left: 40px;
+    margin-top: 5px;
+  }
+
+  // .el-input {
+  //     float: left;
+  //     margin-left: 58px;
+  // }
+  .el-input__inner {
+    padding: 0 9px !important;
+  }
+
+  .el-form-item__error {
+    top: 87% !important;
+    left: 46px !important;
+  }
+}
+
+.economic-form-input {
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  .el-input__icon {
+    display: none;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  .el-form-item {
+    margin-top: -8px;
+    margin-bottom: 7px !important;
+  }
+
+  .el-form-item__label {
+    font-size: 14px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #909090;
+    margin-left: 7px;
+  }
+
+  label {
+    text-align: left;
+    font-weight: normal;
+  }
+
+  input {
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    line-height: 22px;
+    padding-left: 5px;
+    float: left;
+    margin-left: 0px;
+    margin-top: 5px;
+  }
+
+  // .el-input {
+  //     float: left;
+  //     margin-left: 58px;
+  // }
+  .el-input__inner {
+    padding: 0 9px !important;
+  }
+
+  .el-form-item__error {
+    top: 71% !important;
+    left: 8px !important;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 1.0;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 1.0;
+  }
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 1.0;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 1.0;
+  }
+}
+
+.el-message--error {
+  transform: none !important;
+  top: 50vh !important;
+  min-width: 0px !important;
+  animation: fade 500ms infinite;
+}
+
+// .el-message--error .el-message-fade-enter,.el-message-fade-leave-active{
+//    transform: none !important;
+// }
+.el-message--error i {
+  display: none;
+}
+
+.el-message--error {
+  font-weight: bold;
+  display: inline !important;
+  text-align: center !important;
+}
+
+.el-input-group__append,
+.el-input-group__prepend .idx-btn-search {
+  background-color: #20a0ff;
+  color: white;
+}
+
+.resgeo-img-uploader .el-upload {
+  border: 1px dashed #d9d9d9;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.resgeo-img-uploader .el-upload:hover {
+  border-color: #409EFF;
+}
