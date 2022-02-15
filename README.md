@@ -1,4 +1,4 @@
-# lce-program
+# Tartan-Test
 
 ## Project setup
 ```

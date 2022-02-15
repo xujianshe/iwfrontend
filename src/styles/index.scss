@@ -22,7 +22,19 @@ html {
     height: 100%;
     box-sizing: border-box;
 }
-
+.main-container {
+    height: 100%;
+    background-color: #edf0fa;
+    padding: 0px 15px;
+    display: flex;
+    flex-direction: column;
+  }
+.form-right{
+    float:right;
+    .now-shop{
+      margin-right: 20px;
+    }
+  }
 #app {
     height: 100%;
 }

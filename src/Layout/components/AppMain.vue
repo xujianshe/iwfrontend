@@ -46,7 +46,8 @@ export default {
   height: calc(100vh - #{$topHeader});
   width: 100%;
   position: relative;
-  background: rgba(242, 247, 251, 1);
+ // background: rgba(242, 247, 251, 1);
+ background:#edf0fa;
   //padding: 10px;
   //TODO 修改位置
   overflow: auto;

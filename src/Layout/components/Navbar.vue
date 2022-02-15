@@ -10,7 +10,7 @@
       />
       <!-- main title -->
       <div style="text-align: center">
-        <div class="main-title" style="margin-top: 0px">LCE-ADMIN</div>
+        <div class="main-title" style="margin-top: 0px">Tartan-ADMIN</div>
         <!--            <div class="main-subtitle" style="margin-top:-6px;">Tartan's Digital Oil Field Platform of Management and Optimization</div>-->
       </div>
 

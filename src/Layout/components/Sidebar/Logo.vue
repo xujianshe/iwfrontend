@@ -11,7 +11,7 @@
         <h1 class="sidebar-title">L</h1>
       </router-link>
       <router-link v-else key="expand" class="sidebar-logo-link" to="/">
-        <h1 class="sidebar-title">LCE</h1>
+        <h1 class="sidebar-title">Tartan</h1>
       </router-link>
     </transition>
   </div>

@@ -63,7 +63,40 @@ export const routes = [
       },
     ],
   },
-  
+  {
+    path: "/System",
+    component: Layout,
+    meta:{
+      title:'系统',
+      icon:'user'
+    },
+    children: [
+        {
+          path: "Role",
+          name: "Role",
+          component: () => import("@/views/System/Role.vue"),
+          meta: {
+              title: '角色管理',
+          },
+      },
+      {
+        path: "Org",
+        name: "Orgnazition",
+        component: () => import("@/views/System/Orgnazition.vue"),
+        meta: {
+            title: '组织管理',
+        },
+      },
+      {
+        path: "User",
+        name: "User",
+        component: () => import("@/views/System/User.vue"),
+        meta: {
+            title: '用户管理',
+        },
+      }
+    ],
+  },
 ]
 
 const router = new VueRouter({
