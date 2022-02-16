@@ -237,7 +237,7 @@ export default {
       userAllRoles:[],
       orgList:[],
       updatePwdModel: {
-        loginName: "",
+        userName: "",
         oldPassword: "",
         password: "",
         confirmPassword: "",

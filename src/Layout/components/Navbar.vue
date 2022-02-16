@@ -28,9 +28,16 @@
             <i class="el-icon-caret-bottom" />
           </div>
           <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>
+            <!-- <el-dropdown-item>
               <span style="display: block">用户信息</span>
+            </el-dropdown-item> -->
+            <el-dropdown-item>
+              <span style="display: block"  @click="onChangeRole">切换角色</span>
             </el-dropdown-item>
+            <el-dropdown-item>
+              <span style="display: block" @click="onChangePwd">修改密码</span>
+            </el-dropdown-item>
+        
             <el-dropdown-item divided>
               <span style="display: block" @click="logOut">登出</span>
             </el-dropdown-item>
@@ -38,6 +45,65 @@
         </el-dropdown>
       </div>
     </div>
+    
+   <el-dialog
+      title="切换角色"
+      :modal-append-to-body="false"
+      :visible.sync="isShowSwitchRoleDialog"
+      width="40%"
+    >
+    切换角色111111111111
+   </el-dialog>
+    <el-dialog
+      title="修改密码"
+      :modal-append-to-body="false"
+      :visible.sync="isShowChangePwdDialog"
+      width="40%"
+    >
+     <el-form
+        label-width="90px"
+        :model="updatePwdModel"
+        ref="updatePwdModel"
+        size="small"
+        class="form"
+        :rules="checkUpdatePwdModel"
+        status-icon
+      >
+        <el-form-item prop="oldPassword" label="原密码">
+          <el-input
+            style="width: 240px"
+            type="password"
+            v-model="updatePwdModel.oldPassword"
+            placeholder="请输入原密码"
+          ></el-input>
+        </el-form-item>
+        <el-form-item prop="password" label="新密码">
+          <el-input
+            style="width: 240px"
+            type="password"
+            class="text"
+            v-model="updatePwdModel.password"
+            placeholder="请输入新密码"
+          ></el-input>
+        </el-form-item>
+        <el-form-item prop="confirmPassword" label="确认密码">
+          <el-input
+            style="width: 240px"
+            type="password"
+            class="text"
+            v-model="updatePwdModel.confirmPassword"
+            @keyup.enter.native.prevent="updatePwd"
+            placeholder="请再次输入新密码"
+          ></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-button style="float: right" type="primary" @click="onSaveUpdatePwd"
+            >保存</el-button
+          >
+        </el-form-item>
+      </el-form>
+  </el-dialog>
+
   </section>
 </template>
 
@@ -55,8 +121,58 @@ export default {
   },
   watch: {},
   data() {
+      var checkPwd= (rule, value, callback) =>{
+          let message = rule.message || "此项必填";
+          if(!value){
+            callback(new Error(message));
+          }else{
+            if(value.indexOf(' ') !== -1){
+              callback(new Error("密码不能有空格!"));
+            }else{
+              callback();
+            }
+          }
+        }
+      var checkPwdExist = (rule, value, callback) => {
+        if (value !== this.updatePwdModel.password) {
+          callback(new Error("密码不一致！"));
+        } else {
+          callback();
+        }
+      };
     return {
       useravatar,
+      isShowChangePwdDialog:false,
+      isShowSwitchRoleDialog:false,
+      updatePwdModel: {
+        oldPassword: "",
+        password: "",
+        confirmPassword: "",
+      },
+      checkUpdatePwdModel: {
+        oldPassword: [
+          {
+            required: true,
+            validator:checkPwd,
+            trigger: "blur",
+          },
+        ],
+        password: [
+          {
+            required: true,
+            validator:checkPwd,
+            trigger: "blur",
+          },
+        ],
+        confirmPassword: [
+          {
+            required: true,
+            validator:checkPwd,
+            trigger: "blur",
+          },
+          { validator: checkPwdExist, trigger: "blur" },
+        ],
+      },
     };
   },
 
@@ -64,6 +180,30 @@ export default {
     toggleSideBar() {
       this.$store.dispatch("app/toggleSideBar");
     },
+  
+    /**
+     * 事件：切换角色
+     */
+    onChangeRole(){
+      this.isShowChangePwdDialog=false;
+      this.isShowSwitchRoleDialog=true;
+    },
+    /**
+     * 事件：修改密码
+     */
+    onChangePwd(){
+      this.isShowChangePwdDialog=true;
+      this.isShowSwitchRoleDialog=false;
+    },
+    /**
+     * 保存更新密码
+     */
+    onSaveUpdatePwd(){
+
+    },
+    /**
+     * 退出登录
+     */
     logOut() {
       this.$confirm("确认退出？", "提示", {
         confirmButtonText: "确认",

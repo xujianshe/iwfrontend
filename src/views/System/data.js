@@ -123,7 +123,7 @@ export function getAllUserRoles(){
 }
 /**
  * 更新密码
- * @param {*} obj ={oldPassword:'',password:'',confirmPassword:''}
+ * @param {*} obj ={userName:'',oldPassword:'',password:'',confirmPassword:''}
  */
 export function updatePwd(obj){
 
