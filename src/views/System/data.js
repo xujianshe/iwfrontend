@@ -105,3 +105,47 @@ export function addOrg(org){
 export function updateOrg(org){
 
 }
+////////////////////////////////用户管理模块/////////////////////////////////////////////
+/**
+ * 获取用户列表(可接受用户名称模糊查询)
+ * @param {*} userName
+ */
+export function userList(userName){
+  return[{userId:1,userName:'test1',nickName:'test1',status:0,orgId:1,orgName:'检验组',telphone:'',email:'',userRoles:[{roleId:'1-1',roleName:'检验组-组长'}]},
+  {userId:2,userName:'test2',nickName:'test2',status:0,orgId:1,orgName:'检验组',telphone:'',email:'',userRoles:[{roleId:'2-1',roleName:'微生物组-组长'},{roleId:'2-2',roleName:'微生物组-组员'}]},
+  {userId:3,userName:'test3',nickName:'test3',status:0,orgId:1,orgName:'检验组',telphone:'',email:'',userRoles:[{roleId:'2-2',roleName:'微生物组-组员'}]},
+  {userId:4,userName:'test4',nickName:'test4',status:0,orgId:1,orgName:'检验组',telphone:'',email:'',userRoles:[{roleId:'2-2',roleName:'微生物组-组员'}]}
+];
+}
+export function getAllUserRoles(){
+  return [{roleId:'1-1',roleName:'检验组-组长'},{roleId:'1-2',roleName:'检验组-组员'},
+          {roleId:'2-1',roleName:'微生物组-组长'},{roleId:'2-2',roleName:'微生物组-组员'}]
+}
+/**
+ * 更新密码
+ * @param {*} obj ={oldPassword:'',password:'',confirmPassword:''}
+ */
+export function updatePwd(obj){
+
+}
+/**
+ * 注销用户
+ * @param {*} userName(需要注销的用户名)
+ */
+export function cancelUser(userName){
+
+}
+/**
+ *  添加新用户
+ *@param {*} obj ={userId:-1,userName:'',nickName:'',telphone:'',email:'',orgId:'',orgName:'',userRoles:[{roleId:'',roleName:''}]};
+ */
+export function addUser(obj){
+
+}
+/**
+ *  编辑新用户
+ * @param {*} obj ={userId:-1,userName:'',nickName:'',telphone:'',email:'',orgId:'',orgName:'',userRoles:[{roleId:'',roleName:''}]};
+ */
+ export function updateUser(obj){
+
+}
