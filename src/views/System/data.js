@@ -88,3 +88,20 @@ export function orgsList(orgName){
 export function getAllRoles(){
     return [ {roleId:'1',roleTempletName:'主任'},{roleId:'2',roleTempletName:'组长'},{roleId:'3',roleTempletName:'组员'}]
 }
+
+/**
+ * 新增组织机构
+ * org:{orgName:'111',roles:[{roleId:'1',roleTempletName:'主任'}]}
+ * * @param {*} org
+ */
+export function addOrg(org){
+
+}
+/**
+ * 更新组织机构
+ * org:{orgName:'11',roles:[{roleId:'1',roleTempletName:'主任'}],orgId:1}
+ * * @param {*} org
+ */
+export function updateOrg(org){
+
+}

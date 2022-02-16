@@ -58,14 +58,9 @@
     <el-row>
       <el-col :span="24">
    <el-table
-    :data="OrgsList"
-    stripe
-    style="width: 100%">
+    :data="OrgsList" stripe style="width: 100%">
     <el-table-column
-      prop="orgId"
-      label="组织编号"
-      width="180">
-    </el-table-column>
+      prop="orgId" label="组织编号" width="180"></el-table-column>
     <el-table-column
       prop="orgName"
       label="组织名称"
@@ -103,7 +98,7 @@
         <el-row >
           <el-col :span="3">分配角色</el-col>
           <el-col :span="18">
-          <el-select v-model="currentOrg.roles" multiple placeholder="角色名称">
+          <el-select v-model="currentOrg.rolesValue" multiple placeholder="角色名称">
               <el-option
                 v-for="item in RolesList"
                 :key="item.roleId"
@@ -125,7 +120,7 @@
     </section>
 </template>
 <script>
-import {orgsList,getAllRoles} from './data.js'
+import {orgsList,getAllRoles,addOrg,updateOrg} from './data.js'
 export default {
   name: "Orgnazition",
   components:{},
@@ -137,7 +132,7 @@ export default {
       OrgsList:[],
       RolesList:[],
       isShowDetailDiglog:false,
-      currentOrg:{orgName:'',roles:[],orgId:-1}
+      currentOrg:{orgName:'',roles:[],orgId:-1,rolesValue:[]}
       }
   },
   mounted(){
@@ -167,12 +162,45 @@ export default {
      * 事件：新增组织
      */
     onAdd(){
+      this.currentOrg={orgName:'',roles:[],orgId:-1,rolesValue:[]}
       this.isShowDetailDiglog=true;
     },
     /**
      * 事件：新增/编辑 组织确认保存
      */
     onSaveRowConfirm(){
+       for(let i=0;i<this.currentOrg.rolesValue.length;i++)
+        {
+           for(let j=0;j<this.RolesList.length;j++)
+           {
+              if(this.currentOrg.rolesValue[i]==this.RolesList[j].roleId){
+                this.currentOrg.roles.push({roleId:this.RolesList[j].roleId,roleTempletName:this.RolesList[j].roleTempletName})
+                break;
+              }
+           }
+        }
+
+      if(this.currentOrg.orgId==-1){
+        //add
+        let params={orgName:this.currentOrg.orgName,roles:this.currentOrg.roles,}
+        this.addOrg(params);
+      }
+      else{
+        //update
+        let params={orgName:this.currentOrg.orgName,roles:this.currentOrg.roles,orgId:this.currentOrg.orgId}
+        this.updateOrg(params)
+      }
+    },
+    /**
+     * 添加组织机构
+     */
+    addOrg(){
+
+    },
+    /**
+     * 更新组织机构
+     */
+    updateOrg(){
 
     },
     /** 
@@ -180,7 +208,7 @@ export default {
     */
     onOrgEdit(rowIndex,currRow){
        this.isShowDetailDiglog=true;
-       this.currentOrg={orgName:currRow.orgName,roles:[],orgId:currRow.orgId}
+       this.currentOrg={orgName:currRow.orgName,roles:currRow.roles,orgId:currRow.orgId,rolesValue:currRow.roles.map(m=>m.roleId)}
     }
   }
  
