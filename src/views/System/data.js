@@ -70,3 +70,21 @@ export function addRole(roleInfo){
 export function updateRole(roleInfo){
 
 }
+////////////////////////////组织结构接口/////////////////////////////////////////////
+/**
+ * 获取组织结构列表
+ * @param {*} orgName-可以按照orgName模糊查询
+ */
+export function orgsList(orgName){
+ return[{orgId:1,orgName:"检验组",roles:[{roleId:'1',roleTempletName:'主任'}]},
+ {orgId:2,orgName:"免疫组",roles:[{roleId:'1',roleTempletName:'主任'}]},
+ {orgId:3,orgName:"微生物",roles:[{roleId:'2',roleTempletName:'组长'}]},
+ {orgId:4,orgName:"PCR室",roles:[ {roleId:'2',roleTempletName:'组长'},{roleId:'3',roleTempletName:'组员'}]}
+]
+}
+/**
+ * 获取所有角色列表 {roleId:'1',roleTempletName:'主任'}
+ */
+export function getAllRoles(){
+    return [ {roleId:'1',roleTempletName:'主任'},{roleId:'2',roleTempletName:'组长'},{roleId:'3',roleTempletName:'组员'}]
+}
