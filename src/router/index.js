@@ -64,6 +64,57 @@ export const routes = [
     ],
   },
   {
+    path: "/Materials",
+    component: Layout,
+    meta:{
+      title:'物料管理',
+      icon:'user'
+    },
+    children: [
+        {
+          path: "index",
+          name: "material",
+          component: () => import("@/views/MaterialMng/index.vue"),
+          meta: {
+              title: '物料管理',
+          },
+      },
+      {
+        path: "materialwarning",
+        name: "warning",
+        component: () => import("@/views/MaterialMng/MaterialWarning.vue"),
+        meta: {
+            title: '库存安全报警',
+        },
+    },
+    {
+      path: "stockdetail",
+      name: "stock-detail",
+      component: () => import("@/views/MaterialMng/StockDetail.vue"),
+      meta: {
+          title: '库存查询',
+      },
+  },
+  {
+    path: "porecord",
+    name: "po-record",
+    component: () => import("@/views/MaterialMng/PoRecord.vue"),
+    meta: {
+        title: '补货查询',
+    },
+  },
+  {
+    path: "poapprove",
+    name: "po-approve",
+    component: () => import("@/views/MaterialMng/PoApprove.vue"),
+    meta: {
+        title: '补货审批',
+    },
+  },
+
+    ],
+  },
+  {
     path: "/System",
     component: Layout,
     meta:{
