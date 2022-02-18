@@ -96,5 +96,16 @@ export function ApprovePoOrder(obj)
  {
  
  }
- 
-
+ ///////////////////////供应商接单页/////////////////////////////////////////////////////
+/**
+ * 供应商接单:可通过物料名称模糊查询
+ * @param {*} obj={materialName,pageIndex,pageSize} 
+ */
+ export function getSupplierReceiveList(obj){
+  return[{poNo:'补货编号',materialName:'sss',materialType:'200ml',poCount:"1",brand:'雅培',status:1,supplier:'供应商',orgName:'生化',createDate:'2022-1-01'},
+  {poNo:'111',materialName:'sss',materialType:'200ml',poCount:"1",brand:'雅培',status:1,supplier:'',orgName:'生化',createDate:'2022-1-01'},
+  {poNo:'111',materialName:'sss',materialType:'200ml',poCount:"1",brand:'雅培',status:1,supplier:'',orgName:'生化',createDate:'2022-1-01'},
+  {poNo:'111',materialName:'sss',materialType:'200ml',poCount:"1",brand:'雅培',status:1,supplier:'',orgName:'生化',createDate:'2022-1-01'},
+  {poNo:'111',materialName:'sss',materialType:'200ml',poCount:"瓶",brand:'雅培',status:1,supplier:'',orgName:'生化',createDate:'2022-1-01'}
+]
+}

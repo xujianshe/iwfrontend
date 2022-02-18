@@ -100,7 +100,7 @@ export const routes = [
     name: "po-record",
     component: () => import("@/views/MaterialMng/PoRecord.vue"),
     meta: {
-        title: '补货查询',
+        title: '补货记录',
     },
   },
   {
@@ -111,7 +111,22 @@ export const routes = [
         title: '补货审批',
     },
   },
-
+  {
+    path: "supplierReceive",
+    name: "supplier-Receive",
+    component: () => import("@/views/MaterialMng/SupplierReceive.vue"),
+    meta: {
+        title: '供应商补货查询',
+    },
+  },
+  {
+    path: "supplierShipping",
+    name: "supplier-Shipping",
+    component: () => import("@/views/MaterialMng/SupplierShipping.vue"),
+    meta: {
+        title: '供应商交货',
+    },
+  },
     ],
   },
   {

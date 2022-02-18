@@ -6,6 +6,10 @@ import './styles/index.scss'
 import "normalize.css"
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
+import JsonExcel from 'vue-json-excel'
+
+Vue.component('downloadExcel', JsonExcel)
+
 Vue.use(ElementUI);
 import './icons'
 import './permission'
